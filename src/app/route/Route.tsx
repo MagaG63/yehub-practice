@@ -6,7 +6,7 @@ const route = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <>app</> },
+      { index: true, element: <div style={{height: '80vh'}}>app</div> },
       { path: "questions/:id", element: <>questin</> },
     ],
   },
