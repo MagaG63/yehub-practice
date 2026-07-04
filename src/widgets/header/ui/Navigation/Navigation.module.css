@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  list-style: none;
+}
+
+.select {
+  display: none;
+}
+
+@media (max-width: 1068px) {
+  .list {
+    display: none;
+  }
+
+  .select {
+    display: block;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+}
