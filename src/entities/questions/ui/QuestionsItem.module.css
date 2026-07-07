@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  padding: 2vh 2vw;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.text {
+  color: rgba(71, 71, 71, 1);
+  font-size: 16px;
+}
+
+.link {
+  display: none;
+}
+
+@media (max-width: 592px) {
+  .link {
+    display: block;
+  }
+}

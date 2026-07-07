@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  padding-left: 0.5vw;
+  gap: 5vw;
+}
+
+.containerInfo {
+  display: flex;
+  gap: 9px;
+  background: rgb(248, 248, 248);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.info {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 14px;
+  width: 23px;
+  height: 21px;
+  background: rgba(106, 11, 255, 1);
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+
+.menu {
+  margin-left: auto;
+  padding-right: 1.4vw;
+}
+
+@media (max-width: 592px) {
+  .menu {
+    display: none;
+  }
+}

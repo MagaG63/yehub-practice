@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./reducer";
+import questionsApi from "../../entities/questions/api/questionsApi";
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (gDM) => gDM().concat([]),
+  middleware: (gDM) => gDM().concat(questionsApi.middleware),
 });
 
+export default store;
 
-export default store
+export type RootState = ReturnType<typeof store.getState>;
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch;
