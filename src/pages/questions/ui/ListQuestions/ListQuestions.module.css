@@ -1,0 +1,11 @@
+.section {
+  background-color: white;
+  border: 28px solid white;
+  border-radius: 10px;
+}
+
+.title {
+  color: rgba(25, 25, 25, 1);
+  font-weight: 500;
+  font-size: 24px;
+}

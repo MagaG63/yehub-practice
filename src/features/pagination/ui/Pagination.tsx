@@ -6,36 +6,72 @@ import {
   setCurrent,
   setPages,
 } from "../../../entities/questions/api/questionsSlice";
+import btnImg from "../../../shared/assets/Arrow_btn.svg";
 
-export default function Pagination({
-  limit,
-  load,
-}: {
+type Props = {
   limit: number | undefined;
   load: boolean;
-}) {
+};
+
+export default function Pagination({ limit, load }: Props) {
   const { current, page } = useAppSelector((state) => state.params);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setPages(limit));
+    if (limit) {
+      dispatch(setPages(limit));
+    }
   }, [current]);
   const selector = helper(current ?? 1, page ?? undefined);
 
+  const nextPreviosPageHandle = (type: "next" | "previos") => {
+    if (current === null) return;
+
+    if (type === "next" && page !== null && current < page) {
+      dispatch(setCurrent(current + 1));
+    }
+
+    if (type === "previos" && current > 1) {
+      dispatch(setCurrent(current - 1));
+    }
+  };
+
   return (
     <div className={style.container}>
-      <button></button>
-      {!load &&
-        selector.map((el) => (
+      {!load ? (
+        <>
           <button
+            className={style.containerImg}
             onClick={() => {
-              dispatch(setCurrent(el));
+              nextPreviosPageHandle("previos");
             }}
           >
-            {el}
+            <img className={style.backImg} src={btnImg} alt="arrowBtn" />
           </button>
-        ))}
 
-      <button></button>
+          {selector.map((el) => (
+            <button
+              className={
+                style.page + " " + (current == el ? style.activePage : "")
+              }
+              onClick={() => {
+                dispatch(setCurrent(el));
+              }}
+            >
+              {el}
+            </button>
+          ))}
+          <button
+            className={style.containerImg}
+            onClick={() => {
+              nextPreviosPageHandle("next");
+            }}
+          >
+            <img className={style.forwardImg} src={btnImg} alt="arrowBtn" />
+          </button>
+        </>
+      ) : (
+        <div>Loading</div>
+      )}
     </div>
   );
 }

@@ -84,6 +84,10 @@ textarea {
   resize: vertical;
 }
 
+body {
+  background: rgb(233, 233, 233);
+}
+
 button,
 input[type="submit"] {
   display: inline-block;

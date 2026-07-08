@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.page {
+  color: rgba(71, 71, 71, 1);
+}
+
+.activePage {
+  color: white;
+  background-color: rgba(106, 11, 255, 1);
+  border-radius: 5px;
+  padding: 6px 9px;
+}
+
+.forwardImg {
+  transform: rotate(180deg);
+}

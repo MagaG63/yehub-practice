@@ -1,0 +1,15 @@
+.input {
+  outline: none;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid rgba(232, 232, 232, 1);
+  border-radius: 30px;
+  width: 234px;
+  height: 46px;
+  padding: 22px;
+  cursor: text;
+}

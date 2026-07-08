@@ -3,6 +3,7 @@
   padding: 2vh 2vw;
   flex-direction: column;
   gap: 22px;
+  width: 55vw;
 }
 
 .text {

@@ -13,3 +13,8 @@ export type TResponse = {
   limit: number;
   total: number;
 };
+
+export type TParams = {
+  page: number,
+  title?: string
+}

@@ -3,11 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 type TInit = {
   page: number | null;
   current: number | null;
+  title: string;
 };
 
 const initialState: TInit = {
   page: null,
-  current: null,
+  current: 1,
+  title: "",
 };
 
 const questionsSlice = createSlice({
@@ -20,9 +22,12 @@ const questionsSlice = createSlice({
     setPages(state, action: { payload: number }) {
       state.page = action.payload;
     },
+    setTitle(state, action: { payload: string }) {
+      state.title = action.payload;
+    },
   },
 });
 
-export const { setCurrent, setPages } = questionsSlice.actions;
+export const { setCurrent, setPages, setTitle } = questionsSlice.actions;
 
 export default questionsSlice.reducer;
