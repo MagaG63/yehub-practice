@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Menu from "../../../../shared/assets/close.svg";
 import style from "./QuestionsButton.module.css";
+import Menu from "../../../../shared/assets/close.svg";
 
-export default function QuestionsButton({ id }: { id: number }) {
+type Props = {
+  id: number;
+};
+
+export default function QuestionsButton({ id }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggle = () => setIsOpen((prev) => !prev);
+  const close = () => setIsOpen(false);
 
   return (
     <div className={style.container}>
@@ -16,13 +19,13 @@ export default function QuestionsButton({ id }: { id: number }) {
         className={style.img}
         src={Menu}
         alt="Меню"
-        onClick={toggleMenu}
-        style={{ cursor: "pointer" }}
+        onClick={toggle}
+        aria-expanded={isOpen}
       />
       {isOpen && (
         <div className={style.menu} onClick={(e) => e.stopPropagation()}>
-          <Link to={`questions/${id}`} onClick={() => setIsOpen(false)}>
-            <span style={{ color: "darkblue" }}>Подробнее</span>
+          <Link to={`/questions/${id}`} onClick={close}>
+            <span>Подробнее</span>
           </Link>
         </div>
       )}

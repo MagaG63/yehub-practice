@@ -4,11 +4,11 @@ import style from "./Stats.module.css";
 export default function Stats({
   rate,
   complexity,
-  menu
+  menu,
 }: {
   rate: number;
   complexity: number;
-  menu: ReactElement
+  menu?: ReactElement;
 }) {
   return (
     <div className={style.container}>
@@ -20,10 +20,7 @@ export default function Stats({
         <span className={style.info}>Сложность:</span>
         <span className={style.text}>{complexity}</span>
       </div>
-<div className={style.menu}>
-
-      {menu}
-</div>
+      {menu && <div className={style.menu}>{menu}</div>}
     </div>
   );
 }

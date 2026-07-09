@@ -2,5 +2,5 @@
   padding: 3.5vw 0;
   display: flex;
   justify-content: space-evenly;
-  
+  align-items: flex-start;
 }

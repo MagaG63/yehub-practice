@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 2.5vw;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.164);
+}
+
+.header {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(48, 48, 48, 1);
+}
+
+.textWrapper {
+  position: relative;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.text {
+  font-size: 16px;
+  color: rgba(48, 48, 48, 1);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.textWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent 20%, white 90%);
+  pointer-events: none;
+}
+
+.button {
+  margin-top: -50px;
+  padding: 10px 24px;
+  color: rgb(163, 163, 163);
+  font-size: 19px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  align-self: center;
+}

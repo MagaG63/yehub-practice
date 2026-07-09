@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./reducer";
 import questionsApi from "../../entities/questions/api/questionsApi";
+import skillsApi from "../../entities/skills/api/skillsApi";
+import specializationsApi from "../../entities/specializations/api/specializations";
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (gDM) => gDM().concat(questionsApi.middleware),
+  middleware: (gDM) => gDM().concat(questionsApi.middleware, skillsApi.middleware, specializationsApi.middleware),
 });
 
 export default store;

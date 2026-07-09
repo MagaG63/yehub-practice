@@ -1,0 +1,7 @@
+.main {
+  padding: 3.5vw 3vw;
+  display: flex;
+  gap: 5vw;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
