@@ -1,12 +1,7 @@
 import style from "./NextPreviosButton.module.css";
 import icon from "../../../shared/assets/Vector.svg";
-import type { TQuestionItem } from "../../../entities/questions/model/questions.types";
 
-type Props = {
-  data: TQuestionItem;
-};
-
-export default function NextPreviosButton(props: Props) {
+export default function NextPreviosButton() {
 
 
   return (

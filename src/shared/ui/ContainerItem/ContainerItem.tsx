@@ -1,20 +1,20 @@
 import style from "./ContainerItem.module.css";
 
-type Props = {
-  id: number | string | number[];
+type Props<T = number | string | number[]> = {
+  id: T;
   title: string;
   img?: string;
   active?: boolean;
-  onToggle?: (id: number | string | number[]) => void;
+  onToggle?: (id: T) => void;
 };
 
-export default function ContainerItem({
+export default function ContainerItem<T extends number | string | number[]>({
   id,
   title,
   img,
   active,
   onToggle,
-}: Props) {
+}: Props<T>) {
   return (
     <div className={`${style.container} ${active ? style.active : ""}`}>
       {img && <img src={img} alt="" />}

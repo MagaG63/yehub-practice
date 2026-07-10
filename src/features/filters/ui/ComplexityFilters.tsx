@@ -16,7 +16,7 @@ export default function ComplexityFilters() {
   const dispatch = useAppDispatch();
 
   const toggleRate = (id: number[]) => {
-      dispatch(setComplexity(id));
+    dispatch(setComplexity(id));
   };
 
   return (

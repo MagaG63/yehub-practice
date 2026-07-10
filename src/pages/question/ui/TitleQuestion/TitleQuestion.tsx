@@ -13,7 +13,7 @@ export default function TitleQuestion(props: Props) {
   return (
     <div className={style.list}>
       <Title title={props.data.title} description={props.data.description} />
-      <NextPreviosButton data={props.data} />
+      <NextPreviosButton />
       <ShortAnswer text={props.data.shortAnswer} />
       <LongAnswer text={props.data.longAnswer} />
     </div>
